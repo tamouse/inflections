@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141007052057) do
+ActiveRecord::Schema.define(version: 20141007052631) do
 
   create_table "locations", force: true do |t|
     t.string   "name"
@@ -24,10 +24,9 @@ ActiveRecord::Schema.define(version: 20141007052057) do
   create_table "temp_data", force: true do |t|
     t.string   "this"
     t.string   "that"
-    t.string   "the_other"
+    t.integer  "location_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "location_id"
   end
 
   add_index "temp_data", ["location_id"], name: "index_temp_data_on_location_id"
